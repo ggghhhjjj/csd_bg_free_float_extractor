@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  free-float-extractor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: free-float-extractor
+    volumes:
+      - ./input:/data/input
+      - ./output:/data/output
+    # You can override the default command if needed
+    # command: ["--process", "--watch", "--verbose"]
+    restart: unless-stopped
